@@ -2,11 +2,14 @@ package es.unexpectedCharacter.entryBidUpCaller.dao.blockchain;
 
 import es.unexpectedCharacter.entryBidUpCaller.contractWrapper.AdminDemo;
 import org.web3j.protocol.admin.Admin;
+import org.web3j.protocol.admin.methods.response.PersonalUnlockAccount;
+import org.web3j.protocol.core.methods.response.EthAccounts;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.quorum.Quorum;
 import org.web3j.quorum.tx.ClientTransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -25,7 +28,7 @@ public class AdminSmartContractCaller {
     /**
      * The SCAddress
      */
-    private String scAddress = "0xc38628fe43e4a436424090b8e6266732eae1ea84";
+    private String scAddress = "0x80708739931e867e644642a009dad62f6a8c257f";
 
     /**
      * The SC
@@ -116,6 +119,13 @@ public class AdminSmartContractCaller {
     public BigInteger getBidsPayedValByUUintNameEntryAndUserAddr(String uuidName, String trxAddress) throws Exception {
         loadContract(trxAddress);
         return adminDemoSC.getBidsPayedValByUUintNameEntryAndUserAddr(uuidName, trxAddress).send();
+    }
+
+    public String getAccount(int n) throws IOException {
+        final EthAccounts ethAccounts = this.quorum.ethAccounts().send();
+        final String ethFirstAccount = ethAccounts.getAccounts().get(ethAccounts.getAccounts().size() - n);
+        final PersonalUnlockAccount personalUnlockAccount = this.admin.personalUnlockAccount(ethFirstAccount, "").send();
+        return ethFirstAccount;
     }
 
     public void loadContract(String trxAddress) {

@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.UUID;
 
@@ -61,10 +62,10 @@ public class SCTest {
         Assert.assertEquals(AdminSmartContractCaller.getInstance().getUserEntryTicketValue(EVENT_ENTRY_NAME4, USER_ADDR0).equals(HASHED_JSON4), true);
     }
 
-    private void variableInitializer(Hash hash) {
-        ADMIN_ADDR = "0x1f524daca05575feb1c0aa7f8dfcab5ae0ea3da3";
-        USER_ADDR0 = "0xe6354c08353050085401c951da14b27bae8912d9";
-        USER_ADDR1 = "0x581ddbe460f60c64e2e7cadfb311965889fc2571";
+    private void variableInitializer(Hash hash) throws IOException {
+        ADMIN_ADDR = AdminSmartContractCaller.getInstance().getAccount(1);
+        USER_ADDR0 = AdminSmartContractCaller.getInstance().getAccount(2);
+        USER_ADDR1 = AdminSmartContractCaller.getInstance().getAccount(3);
 
         EVENT_ENTRY_NAME0 = "Pink Floyd_" + UUID.randomUUID().toString();
         EVENT_ENTRY_NAME1 = "The Who_" + UUID.randomUUID().toString();
