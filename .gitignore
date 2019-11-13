@@ -12,3 +12,6 @@ buildNumber.properties
 ### Intellij ###
 EntryBidUpDeployer/.idea/
 EntryBidUpDeployer/EntryBidUp.iml
+EntryBidUpCaller/.idea/
+EntryBidUpCaller/.mvn/
+EntryBidUpCaller/EntryBidUp.iml
