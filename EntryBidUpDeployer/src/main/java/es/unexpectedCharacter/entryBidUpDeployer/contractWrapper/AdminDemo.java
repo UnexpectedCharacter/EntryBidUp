@@ -1,4 +1,4 @@
-package es.cybernote.entryBidUpDeployer.contractWrapper;
+package es.unexpectedCharacter.entryBidUpDeployer.contractWrapper;
 
 
 import org.web3j.abi.TypeReference;

@@ -1,4 +1,4 @@
-package es.cybernote.entryBidUpDeployer.dao.blockchain;
+package es.unexpectedCharacter.entryBidUpDeployer.dao.blockchain;
 
 
 import org.web3j.tx.gas.StaticGasProvider;

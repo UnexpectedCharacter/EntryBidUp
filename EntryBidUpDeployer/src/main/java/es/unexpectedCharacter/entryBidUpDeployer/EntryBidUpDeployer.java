@@ -1,6 +1,6 @@
-package es.cybernote.entryBidUpDeployer;
+package es.unexpectedCharacter.entryBidUpDeployer;
 
-import es.cybernote.entryBidUpDeployer.dao.blockchain.Deployer;
+import es.unexpectedCharacter.entryBidUpDeployer.dao.blockchain.Deployer;
 
 public class EntryBidUpDeployer {
 
