@@ -15,3 +15,5 @@ EntryBidUpDeployer/EntryBidUp.iml
 EntryBidUpCaller/.idea/
 EntryBidUpCaller/.mvn/
 EntryBidUpCaller/EntryBidUp.iml
+
+*.iml
